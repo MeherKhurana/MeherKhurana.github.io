@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+	<head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>East Asia Project</title>
+        <link rel="shortcut icon" href="favicon/favicon.ico" type="image/x-icon">
+        <link rel="icon" href="favicon/favicon.ico" type="image/x-icon">
+        <link rel="stylesheet" type="text/css" href="src/assets/css/main.css">
+	</head>
+	<body>
+        <div class="container-main">
+            <div id="menu" class="menu"></div>
+            <div id="moons" class="moons"></div>
+            <div id="current-target-title" class="current-target-title active">Solar System</div>
+            <div id="toggle-effects" class="toggle-effects">
+                <div class="control-holder">
+                    <label for="toggle-orbit-highlight">
+                        <input type="checkbox" id="toggle-orbit-highlight" class="toggle-control">
+                        <span>Orbit Color Effects</span>
+                    </label>
+                </div>
+            </div>
+            <div class="intro-screen">
+                <div class="intro-text">
+                    <div class="intro-heading">
+                        <h1>East Asia Project</h1>
+                        <h5>by Meher Khurana</h5>
+                    </div>
+                    <div class="inner">
+                        <p>This is my East Asia Project. I am doing a real acurate repersentation of our Solar System. This is connected to East Asia becuase it shows what the Ancient Chinese though of each planet as it walks you through each one with realtime data.</p>
+                        <div id="render-scene" class="button large render-scene">
+                            <span>View Solar System</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="solar-system" class="scene" style="background-color: white;"></div>
+        </div>
+
+        <div class="full reveal" id="exampleModal8" data-reveal>
+          <p>Sorry, but this project is currently not viewable from a mobile device.</p>
+          <button class="close-button" data-close aria-label="Close reveal" type="button">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+
+        <div id="info" class="reveal info-modal" data-reveal data-close-on-click="true">
+            <div class="project-info row collapse">
+                <h3>Project Info</h3>
+                <span class="small-3 columns">Universe Scale</span><span class="small-9 columns">6.30957344 &times; 10<sup>5</sup></span>
+                <span class="small-3 columns">Orbit Scale</span><span class="small-9 columns">6.30957344 &times; 10<sup>5</sup></span>
+                <span class="small-3 columns">Celestial Scale</span><span class="small-9 columns">1.2589254 &times; 10<sup>4</sup></span>
+            </div>
+
+            <div class="project-info row collapse">
+                <h3>Controls</h3>
+                <span class="small-12 columns">Use your mouse or trackpad to navigate the scene. To zoom, use a scroll motion. When viewing a planet, you can move around a planet using a click + drag motion.</span>
+            </div>
+
+            <button class="close-button" data-close aria-label="Close modal" type="button">
+                <span aria-hidden="true">&times;</span>
+            </button>
+            <a id="info-got-it" class="button large" data-close="info">Close</a>
+        </div>
+
+        <script type="text/javascript">
+            function isMobile() {
+                return navigator.userAgent.match(/Android/i)
+                    || navigator.userAgent.match(/BlackBerry/i)
+                    || navigator.userAgent.match(/iPhone|iPad|iPod/i)
+                    || navigator.userAgent.match(/Opera Mini/i)
+                    || navigator.userAgent.match(/IEMobile/i)
+                ;
+            }
+            if (isMobile()) {
+                var viewButton = document.getElementById('render-scene');
+
+                if (viewButton) {
+                    viewButton.innerHTML = '<span>Mobile version coming soon. Please view from laptop or desktop.</span>';
+                }
+            }
+        </script>
+        <script type="text/javascript" src="src/app/vendor/jquery/dist/jquery.min.js"></script>
+        <script type="text/javascript" src="src/app/vendor/foundation-sites/dist/foundation.min.js"></script>
+        <script type="text/javascript" src="src/app/vendor/stats/build/stats.min.js"></script>
+        <script type="text/javascript" src="src/app/vendor/tweenjs/build/tween.min.js"></script>
+        <script type="text/javascript" src="src/app/vendor/three.js/three.min.js"></script>
+        <script data-main="src/app/app" src="src/app/vendor/requirejs/require.js"></script>
+	</body>
+</html>
